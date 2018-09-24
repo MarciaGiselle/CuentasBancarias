@@ -49,10 +49,42 @@ public class TestCuentas {
 	
 	@Test
 	public void testSePuedeExtraer() {
+		//CuentaSueldo
+		cuenta1.depositar(12000.0);
 		cuenta1.extraer(7000.0);
 		//cuenta1.extraer(2000.0);
 		Double saldoEsperado2=5000.0;
 		assertEquals(saldoEsperado2,cuenta1.getSaldo());
+		
+		//CajaDeAhorros
+		cuenta3.depositar(8000.0);
+		cuenta3.extraer(1000.0);
+		cuenta3.extraer(1000.0);
+		cuenta3.extraer(1000.0);
+		cuenta3.extraer(1000.0);
+		cuenta3.extraer(1000.0);
+		saldoEsperado=3000.0;
+		assertEquals(saldoEsperado,cuenta3.getSaldo());
+		
+		cuenta3.extraer(1000.0);
+		saldoEsperado=1994.0;
+		assertEquals(saldoEsperado,cuenta3.getSaldo());
+		
+		cuenta3.extraer(3000.0);
+		System.out.println(cuenta3.getSaldo());
+		assertEquals(saldoEsperado,cuenta3.getSaldo());
+
+		//CuentaCorriente
+		cuenta2.depositar(2000.0);
+		cuenta2.extraer(3000.0);
+		saldoEsperado= -1050.0;
+		assertEquals(saldoEsperado, cuenta2.getSaldo());
+		Double descesperado = 950.0;
+		assertEquals(descesperado, cuenta2.getDescubierto());
+		cuenta2.extraer(950.0);
+		saldoEsperado=
+		
+		
 		
 	}
 	

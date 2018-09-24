@@ -9,11 +9,12 @@ public class CuentaSueldo extends Cuenta {
 
 	@Override
 	public void extraer(Double extraccion) {
-		if(this.getSaldo()>= extraccion) {
-			this.setSaldo(this.getSaldo()-extraccion);
+		if(getSaldo()>= extraccion) {
+			setSaldo(getSaldo()-extraccion);
 		}
 		
 	}
+	
 	
 	
 
